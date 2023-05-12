@@ -9,6 +9,6 @@ export async function getStaticPaths() {
     // Return a list of possible value for id
 }
 
-export async function getStaticProps({ }) {
+export async function getStaticProps({ id }: any) {
     // Fetch necessary data for the blog post using params.id
 }
