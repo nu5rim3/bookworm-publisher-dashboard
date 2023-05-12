@@ -2,11 +2,18 @@
   "name": "bookworm-publisher-dashboard",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/nu5rim3/bookworm-publisher-dashboard.git",
+  "engines": {
+    "node": ">=18.16.0",
+    "npm": ">=9.5.1"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.19",
@@ -26,5 +33,9 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "prettier": "^2.8.8"
   }
 }
