@@ -1,14 +1,12 @@
 'use client';
 
-import { Button, Stack, useToast } from '@chakra-ui/react';
+import { Button, Stack, useColorMode, useToast } from '@chakra-ui/react';
 import { Editor } from '@tinymce/tinymce-react';
 import { useRef } from 'react';
 
 export default function Writer() {
   const toast = useToast();
-  const useDarkMode = window.matchMedia(
-    `(prefers-color-scheme: 'dark')`
-  ).matches;
+  const { colorMode } = useColorMode();
   const editorRef = useRef<any>(null);
   // const log = () => {
   //     if (editorRef.current) {
@@ -79,8 +77,8 @@ export default function Writer() {
             'removeformat | help | preview fullscreen ',
           content_style:
             'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
-          skin: useDarkMode ? 'oxide-dark' : 'oxide',
-          content_css: useDarkMode ? 'dark' : 'default',
+          skin: colorMode === 'dark' ? 'oxide-dark' : 'oxide',
+          content_css: colorMode === 'dark' ? 'dark' : 'default',
         }}
       />
 
